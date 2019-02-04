@@ -12,40 +12,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class BasePageUtil {
 
-	public WebDriver driver = BaseTest.getDriver();
+    public WebDriver driver = BaseTest.getDriver();
 
-	public void clickElement(By selector) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).click();
-	}
+    public void clickElement(By selector) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).click();
+    }
 
-	public void setText(By selector, String text) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).sendKeys(text);
-		} catch (Exception e) {
-			Assert.fail(selector + " elementi bulunamadı!");
-		}
-	}
+    public void setText(By selector, String text) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).sendKeys(text);
+    }
 
-	public String getText(By selector) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 5);
-			return wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).getText();
-		} catch (Exception e) {
-			Assert.fail(selector + " elementi bulunamadı!");
-		}
-		return driver.findElement(selector).getText();
-	}
+    public String getText(By selector) {
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).getText();
+    }
 
-	public boolean isElementDisplayed(By selector) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, 10);
-			return wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).isDisplayed();
-		} catch (Exception e) {
-			Assert.fail(selector + " elementi bulunamadı!");
-		}
-		return true;
-
-	}
+    public boolean isElementDisplayed(By selector) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(selector)).isDisplayed();
+    }
 }
