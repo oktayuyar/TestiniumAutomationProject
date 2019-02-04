@@ -7,5 +7,5 @@ import com.sahabt.testinium.page.LoginPage;
  */
 public interface IHomePage {
 
-    LoginPage callLoginPage();
+    ILoginPage callLoginPage();
 }

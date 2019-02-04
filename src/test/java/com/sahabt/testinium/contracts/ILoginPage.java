@@ -8,9 +8,9 @@ import com.sahabt.testinium.page.LoginPage;
  */
 public interface ILoginPage {
 
-    LoginPage login(String email, String password);
+    ILoginPage login(String email, String password);
 
-    HomePage clickSignInButton();
+    IHomePage clickSignInButton();
 
-    LoginPage checkUnsuccessfulLogin();
+    ILoginPage checkUnsuccessfulLogin();
 }

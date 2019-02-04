@@ -1,5 +1,6 @@
 package com.sahabt.testinium.page;
 
+import com.sahabt.testinium.contracts.IHomePage;
 import com.sahabt.testinium.contracts.ILoginPage;
 import com.sahabt.testinium.util.BasePageUtil;
 import org.junit.Assert;
@@ -16,20 +17,20 @@ public class LoginPage extends BasePageUtil implements ILoginPage {
     public final By txtErrorMessage= By.cssSelector(".alert-danger");
 
     @Override
-    public LoginPage login(String email, String password) {
+    public ILoginPage login(String email, String password) {
         setText(txtUserName,email);
         setText(txtPassword,password);
         return new LoginPage();
     }
 
     @Override
-    public HomePage clickSignInButton() {
+    public IHomePage clickSignInButton() {
         clickElement(buttonSignIn);
         return new HomePage();
     }
 
     @Override
-    public LoginPage checkUnsuccessfulLogin() {
+    public ILoginPage checkUnsuccessfulLogin() {
         Assert.assertTrue(isElementDisplayed(txtErrorMessage));
         return new LoginPage();
     }

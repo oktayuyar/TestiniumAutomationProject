@@ -1,5 +1,7 @@
 package com.sahabt.testinium.tests;
 
+import com.sahabt.testinium.contracts.IHomePage;
+import com.sahabt.testinium.contracts.ILoginPage;
 import com.sahabt.testinium.page.HomePage;
 import com.sahabt.testinium.page.LoginPage;
 import cucumber.api.java.en.And;
@@ -9,8 +11,8 @@ import cucumber.api.java.en.And;
  */
 public class LoginTest {
 
-    public LoginPage loginPage = new LoginPage();
-    public HomePage homePage = new HomePage();
+    public ILoginPage loginPage = new LoginPage();
+    public IHomePage homePage = new HomePage();
 
     @And("^Testinium web sitesinde login butonuna tıklanır$")
     public void testiniumWebSitesindeLoginButounaTıklanır() {
@@ -30,7 +32,6 @@ public class LoginTest {
     @And("^Testinium web sitesinde sign-in butonuna tıklanır$")
     public void testiniumWebSitesindeSignInButonunaTıklanır() {
         loginPage.clickSignInButton();
-
     }
 
     @And("^Testinium web sitesine giriş yapılamadığı kontrol edilir$")
