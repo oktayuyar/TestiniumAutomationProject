@@ -4,7 +4,6 @@ import com.sahabt.testinium.contracts.ILoginPage;
 import com.sahabt.testinium.util.BasePageUtil;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 /*
  *  Created by oktayuyar on 2018-12-26

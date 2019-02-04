@@ -3,7 +3,6 @@ package com.sahabt.testinium.tests;
 import com.sahabt.testinium.page.HomePage;
 import com.sahabt.testinium.page.LoginPage;
 import cucumber.api.java.en.And;
-import org.openqa.selenium.WebDriver;
 
 /*
  *  Created by oktayuyar on 2018-12-26
