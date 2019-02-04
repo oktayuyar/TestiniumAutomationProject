@@ -10,7 +10,7 @@ public interface ILoginPage {
 
     LoginPage login(String email, String password);
 
-    HomePage checkSuccessfulLogin();
+    HomePage clickSignInButton();
 
     LoginPage checkUnsuccessfulLogin();
 }

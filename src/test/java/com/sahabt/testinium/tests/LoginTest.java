@@ -13,29 +13,31 @@ public class LoginTest {
     public LoginPage loginPage = new LoginPage();
     public HomePage homePage = new HomePage();
 
-    @And("^Uygulamanın alt menüsünden hesap seçeneğine tıklanır$")
-    public void uygulamanınAltMenüsündenHesapSeçeneğineTıklanır() throws Throwable {
+    @And("^Testinium web sitesinde login butonuna tıklanır$")
+    public void testiniumWebSitesindeLoginButounaTıklanır() {
         homePage.callLoginPage();
     }
 
-    @And("^Uygulamaya başarılı giriş için ([^\"]*) ve ([^\"]*) yazılır$")
-    public void uygulamayaBaşarılıGirişIçinEmailVePasswordYazılır(String email, String password) throws Throwable {
+    @And("^Testinium web sitesine başarısız giriş için ([^\"]*) ve ([^\"]*) yazılır$")
+    public void testiniumWebSitesineBaşarısızGirişIçinEmailVePasswordYazılır(String email, String password) throws Throwable {
         loginPage.login(email, password);
     }
 
-    @And("^Uygulamaya başarısız giriş için \"([^\"]*)\" ve \"([^\"]*)\" yazılır$")
-    public void uygulamayaBaşarısızGirişIçinVeYazılır(String email, String password) throws Throwable {
+    @And("^Testinium web sitesine başarısız giriş için \"([^\"]*)\" ve \"([^\"]*)\" yazılır$")
+    public void testiniumWebSitesineBaşarısızGirişIçinVeYazılır(String email, String password) throws Throwable {
         loginPage.login(email, password);
     }
 
-    @And("^Başarılı şekilde uygulamaya giriş yapıldığı kontrol edilir$")
-    public void başarılıŞekildeUygulmaayaGirişYapıldığıKontrolEdilir() throws Throwable {
-        loginPage.checkSuccessfulLogin();
+    @And("^Testinium web sitesinde sign-in butonuna tıklanır$")
+    public void testiniumWebSitesindeSignInButonunaTıklanır() {
+        loginPage.clickSignInButton();
+
     }
 
-    @And("^Uygulamaya giriş yapılamadığı kontrol edilir$")
-    public void uygulmaayaGirişYapılamadığıKontrolEdilir() throws Throwable {
+    @And("^Testinium web sitesine giriş yapılamadığı kontrol edilir$")
+    public void testiniumWebSitesineGirişYapılamadığıKontrolEdilir() throws Throwable {
         loginPage.checkUnsuccessfulLogin();
     }
+
 
 }

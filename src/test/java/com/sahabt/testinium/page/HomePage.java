@@ -12,11 +12,12 @@ import org.openqa.selenium.support.FindBy;
  */
 public class HomePage extends BasePageUtil implements IHomePage {
 
-    public By buttonSignUp = By.xpath("//div[@id='navbarCollapse']/ul/li[8]/a[@href='https://account.testinium.com/uaa/register']");
+    public final By buttonLogin = By.linkText("LOGIN");
+
 
     @Override
     public LoginPage callLoginPage() {
-        clickElement(buttonSignUp);
+        clickElement(buttonLogin);
         return new LoginPage();
     }
 }

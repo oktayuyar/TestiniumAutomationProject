@@ -6,17 +6,21 @@ Feature: Login Test Senaryoları
 
   @Geçerli_kullanıcı_ile_uygulamaya__giriş_yapma
   Scenario Outline: Geçerli kullanıcı ile uygulamaya giriş yapma
-    And Uygulamanın alt menüsünden hesap seçeneğine tıklanır
-    And Uygulamaya başarılı giriş için <email> ve <password> yazılır
-    And Başarılı şekilde uygulamaya giriş yapıldığı kontrol edilir
+    And Testinium web sitesinde login butonuna tıklanır
+    And Testinium web sitesine başarısız giriş için <email> ve <password> yazılır
+    And Testinium web sitesinde sign-in butonuna tıklanır
+    And Testinium web sitesine giriş yapılamadığı kontrol edilir
 
     Examples:
       | email | password |
-      | oktyuyar@gmail.com | 12345 |
+      | oktyuyar@gmail.com | 111111 |
+      | oktay.uyar@sahabt.com | 1231 |
+
 
   @Geçersiz_kullanıcı_ile_uygulamaya_giriş_yapma
   Scenario: Geçersiz kullanıcı ile uygulamaya giriş yapma
-    And Uygulamanın alt menüsünden hesap seçeneğine tıklanır
-    And Uygulamaya başarısız giriş için "oktyuyar@gmail.com" ve "12345" yazılır
-    And Uygulamaya giriş yapılamadığı kontrol edilir
+    And Testinium web sitesinde login butonuna tıklanır
+    And Testinium web sitesine başarısız giriş için "oktyuyar@gmail.com" ve "12345" yazılır
+    And Testinium web sitesinde sign-in butonuna tıklanır
+    And Testinium web sitesine giriş yapılamadığı kontrol edilir
 
