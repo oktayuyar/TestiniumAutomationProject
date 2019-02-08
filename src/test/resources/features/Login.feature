@@ -6,10 +6,10 @@ Feature: Login Test Senaryoları
 
   @Geçersiz_kullanıcı_ile_uygulamaya__giriş_yapmaya_çalışma_scenario_outline
   Scenario Outline: Geçersiz kullanıcı ile uygulamaya giriş yapma scenario outline
-    And Testinium web sitesinde login butonuna tıklanır
-    And Testinium web sitesine başarısız giriş için <email> ve <password> yazılır
+    Given Testinium web sitesinde login butonuna tıklanır
+    When Testinium web sitesine başarısız giriş için <email> ve <password> yazılır
     And Testinium web sitesinde sign-in butonuna tıklanır
-    And Testinium web sitesine giriş yapılamadığı kontrol edilir
+    Then Testinium web sitesine giriş yapılamadığı kontrol edilir
 
     Examples:
       | email | password |
@@ -19,8 +19,8 @@ Feature: Login Test Senaryoları
 
   @Geçersiz_kullanıcı_ile_uygulamaya_giriş_yapmaya_çalışma
   Scenario: Geçersiz kullanıcı ile uygulamaya giriş yapmaya çalışma
-    And Testinium web sitesinde login butonuna tıklanır
-    And Testinium web sitesine başarısız giriş için "oktyuyar@gmail.com" ve "12345" yazılır
+    Given Testinium web sitesinde login butonuna tıklanır
+    When Testinium web sitesine başarısız giriş için "oktyuyar@gmail.com" ve "12345" yazılır
     And Testinium web sitesinde sign-in butonuna tıklanır
-    And Testinium web sitesine giriş yapılamadığı kontrol edilir
+    Then Testinium web sitesine giriş yapılamadığı kontrol edilir
 
